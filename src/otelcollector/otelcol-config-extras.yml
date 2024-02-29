@@ -11,8 +11,11 @@
   exporters:
     debug/detailed:
       verbosity: detailed
+    file:
+      format: json
+      path: /etc/metrics.json
 
   service:
     pipelines:
       metrics:
-        exporters: [otlphttp/prometheus, debug/detailed]
+        exporters: [otlphttp/prometheus, file]
